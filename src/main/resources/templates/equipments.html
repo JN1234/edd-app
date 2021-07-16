@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Equipments</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="Cascade/w3.css"/>
+<link rel="stylesheet" href="Cascade/nicepage.css"/>
+<link rel="stylesheet" href="Cascade/One.css"/>
+<link rel="stylesheet" href="Cascade/Equipments.css"/>
+<link rel="stylesheet" href="Cascade/footer.css"/>
+<link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/font-awesome.min.css"/>
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left classclasscolor" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large classclasscolor"
+  onclick="w3_close()">Close &times;</button>
+ <a th:href="@{/home}" class="w3-bar-item w3-button">Home</a>
+  <a th:href="@{/equipments}" class="w3-bar-item w3-button">Equipments</a>
+  <a th:href="@{/issues}" class="w3-bar-item w3-button">Issues</a>
+  <a th:href="@{/about}"class="w3-bar-item w3-button">About me</a>
+  <a th:href="@{/login}"class="w3-bar-item w3-button">Logout</a>
+</div>
+
+<div id="main">
+
+<div class="classclasscolor">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+  <div  class ="w3-center">
+  <img src="Images/zesco_square.png" alt="logo" width="10%"/>
+    </div>
+    <h1 class="w3-animate-fading">Welcome to Zesco Issue Tracking Web App</h1>
+	<h5 >Welcome <span sec:authentication="principal.username">Welcome guest! </span></h5>
+  </div>
+</div>
+
+<div class="marg">
+<div class="container">
+  <form th:action="@{/equipments/addNew}" method="POST">
+    
+    <div class="row w3-center">
+      <div class="col-25">
+        <label for="Equip">Equipment</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="Equip" name="name" placeholder="Equipment..">
+      </div>
+    </div>
+    <div class="row w3-center">
+      <div class="col-25">
+        <label for="descri">Description</label>
+      </div>
+      <div class="col-75 w3">
+        <textarea id="subject" name="description" placeholder="Description of equipmet.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row w3-center">
+      <p><input type="submit" name="save" value="Save"> <br></p>
+    </div>
+  </form>
+</div>
+
+ <!--Table div-->
+ <div  class="w3-card-4" style="margin-top: 30px;">
+  <table class="w3-table-all">
+    <thead>
+       <tr class="w3-light-grey">
+        <th >Id</th> 
+        <th >Name</th>
+        <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr  th:each="equipments:${equipments}">
+            <td th:text="${equipments.id}"></td>
+            <td th:text="${equipments.name}"></td>
+            <td th:text="${equipments.description}"></td>
+        </tr>
+    </tbody>
+</table>
+  </div>
+</div>
+
+
+<footer>
+      <div class="w3-container w3-center  w3-text-black w3-animate-left">
+        <h4>ZESCO POWERING THE NATION</h4>
+      </div>
+      <div class="row w3-animate-fading">
+          <div class="col ">
+              <h4>What would you like to do?</h4>
+              <a class="dropdown-item" href="#"> See Equipments,</a>
+              <a class="dropdown-item" href="#">Register,</a>
+              <a class="dropdown-item" href="#">Logout.</a>
+          </div>
+  
+      </div>
+  
+  </footer>
+  
+<script src="Script/one.js"></script>
+
+</body>
+</html>

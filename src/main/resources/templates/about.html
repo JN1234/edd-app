@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Cascade/w3.css">
+<link rel="stylesheet" href="Cascade/nicepage.css">
+<link rel="stylesheet" href="Cascade/One.css">
+<link rel="stylesheet" href="Cascade/footer.css">
+<link rel="stylesheet" href="Cascade/About.css">
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left classclasscolor" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large classclasscolor"
+  onclick="w3_close()">Close &times;</button>
+ <a th:href="@{/home}" class="w3-bar-item w3-button">Home</a>
+  <a th:href="@{/equipments}" class="w3-bar-item w3-button">Equipments</a>
+  <a th:href="@{/issues}" class="w3-bar-item w3-button">Issues</a>
+  <a th:href="@{/about}"class="w3-bar-item w3-button">About me</a>
+  <a th:href="@{/login}"class="w3-bar-item w3-button">Logout</a>
+</div>
+
+<div id="main">
+
+<div class="classclasscolor">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+  <div  class ="w3-center">
+  <img src="Images/zesco_square.png" alt="logo" width="10%"/>
+    </div>
+    <h1 class="w3-animate-fading">Welcome to  Zesco Issue Tracking Web App</h1>
+	<h5 >Welcome <span sec:authentication="principal.username">Welcome guest! </span></h5>
+  </div>
+</div>
+
+  <div class="w3-container">
+
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="Images/Eddy.jpg" alt="ME" style="width:100%">
+          <div class="container">
+            <h2>Eddy Chitalu</h2>
+            <p>Computer Science 3rd Year</p>
+            <p>SIN: 18121066</p>
+            <p>Eddychitalu@gmail.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
+
+
+<footer>
+      <div class="w3-container w3-center  w3-text-black w3-animate-left">
+        <h4>ZESCO POWERING THE NATION</h4>
+      </div>
+      <div class="row w3-animate-fading">
+          <div class="col ">
+              <h4>What would you like to do?</h4>
+              <a class="dropdown-item" href="#"> See Equipments,</a>
+              <a class="dropdown-item" href="#">Register,</a>
+              <a class="dropdown-item" href="#">Logout.</a>
+          </div>
+  
+      </div>
+  
+  </footer>
+  
+<script src="Script/one.js"></script>
+
+</divclass="row">
+</div>
